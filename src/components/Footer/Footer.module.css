@@ -1,0 +1,53 @@
+@import '../../index.css';
+
+
+
+.footer {
+  background-color: #131722;
+  padding: 3rem 0;
+  color: #fff;
+}
+
+.icon {
+  font-size: 36px;
+  color: #f3fb15; /* يمكنك تغيير اللون هنا حسب رغبتك */
+}
+
+.footerMenu a {
+  font-size: 16px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footerMenu a:hover {
+  color: #f3fb15; 
+}
+
+.socialIcon {
+  font-size: 20px;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: #f3fb15 !important; 
+  transform: scale(1.2);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #f3fb15;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0;
+  }
+  .footerMenu {
+    text-align: center;
+  }
+  .socialIcon {
+    font-size: 28px;
+  }
+}

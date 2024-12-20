@@ -1,0 +1,73 @@
+.detailsContainer {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ddd;
+  }
+  
+  .detailsContent {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+    background-color: #131722;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+
+  }
+  
+  .detailsPoster {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .detailsPoster img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .detailsInfo {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .detailsTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .detailsTagline {
+    font-size: 1.2rem;
+    font-style: italic;
+    color:#E4D804;
+  }
+  
+  .detailsGenres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .genreBadge {
+    background-color:  #E4D804;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .detailsOverview {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+  }
+  
+  .loading {
+    font-size: 1.5rem;
+    color: #888;
+  }
+  
