@@ -11,7 +11,7 @@ import Movies from "./pages/Movies/Movies";
 import Tvshows from "./pages/Tvshows/Tvshows";
 import Register from "./pages/Register/Register";
 import People from "./pages/People/People";
-import Footer from "./components/Footer/Footer"; // استيراد الفوتر
+import Footer from "./components/Footer/Footer"; 
 
 const routes = createBrowserRouter([
   {
@@ -26,7 +26,7 @@ const routes = createBrowserRouter([
       { path: "register", element: <Register /> },
       { path: "people", element: <People /> },
       { path: "login", element: <Login /> },
-      { path: "details/:id", element: <Details /> }, // مسار التفاصيل
+      { path: "details/:id", element: <Details /> }, 
     ],
   },
 ]);
