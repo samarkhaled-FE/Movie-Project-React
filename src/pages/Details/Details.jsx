@@ -1,9 +1,8 @@
 
 
-
-
 import { useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import styles from "./Details.module.css";
 import axios from "axios";
 
@@ -11,11 +10,12 @@ export default function Details() {
   const { id } = useParams();
   const location = useLocation();
   const [itemDetails, setItemDetails] = useState(null);
-  const [type, setType] = useState("movie"); // القيمة الافتراضية هي "movie"
+  const [type, setType] = useState("movie");
+  const theme = useSelector((state) => state.theme.theme); 
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
-    const itemType = queryParams.get("type") || "movie"; // "movie" كافتراضي
+    const itemType = queryParams.get("type") || "movie";
     setType(itemType);
 
     getItemDetails(itemType);
@@ -32,12 +32,16 @@ export default function Details() {
     }
   };
 
+  const containerStyle = {
+    backgroundColor: theme === "light" ? "#f8f9fa" : "#131722",
+    color: theme === "light" ? "#000" : "#ddd",
+  };
+
   return (
-    <div className={styles.detailsContainer}>
+    <div className={styles.detailsContainer} style={containerStyle}>
       {itemDetails ? (
         <div className={styles.detailsContent}>
           <div className={styles.detailsPoster}>
-            {/* استخدم profile_path للشخص بدلاً من poster_path */}
             <img
               src={`https://image.tmdb.org/t/p/original${itemDetails.profile_path || itemDetails.poster_path}`}
               alt={itemDetails.name || itemDetails.title}
@@ -47,17 +51,17 @@ export default function Details() {
             <h1 className={styles.detailsTitle}>
               {itemDetails.name || itemDetails.title}
             </h1>
-            {/* عرض السيرة الذاتية إذا كان الشخص هو المتمرير */}
             {type === "person" && itemDetails.biography && (
               <p className={styles.detailsOverview}>{itemDetails.biography}</p>
             )}
             <p className={styles.detailsTagline}>{itemDetails.tagline || ""}</p>
             <div className={styles.detailsGenres}>
-              {itemDetails.genres && itemDetails.genres.map((genre) => (
-                <span key={genre.id} className={styles.genreBadge}>
-                  {genre.name}
-                </span>
-              ))}
+              {itemDetails.genres &&
+                itemDetails.genres.map((genre) => (
+                  <span key={genre.id} className={styles.genreBadge}>
+                    {genre.name}
+                  </span>
+                ))}
             </div>
             <p>
               <strong>Vote:</strong> {itemDetails.vote_average}
@@ -68,7 +72,6 @@ export default function Details() {
             <p>
               <strong>Popularity:</strong> {itemDetails.popularity}
             </p>
-            {/* إذا كان نوع "person"، أضف تاريخ الميلاد */}
             {type === "person" && (
               <p>
                 <strong>Birthday:</strong> {itemDetails.birthday || "N/A"}

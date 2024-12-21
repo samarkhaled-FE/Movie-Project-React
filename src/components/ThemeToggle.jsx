@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../store/themeSlice";
-import { FaMoon, FaSun } from "react-icons/fa"; // استيراد الأيقونات
+import { FaMoon, FaSun } from "react-icons/fa"; 
 
 const ThemeToggle = () => {
   const theme = useSelector((state) => state.theme.theme);
@@ -29,9 +29,9 @@ const ThemeToggle = () => {
       onClick={handleToggle}
     >
       {theme === "light" ? (
-        <FaMoon size={20} style={{ color: "#ffcc00" }} /> // أيقونة الوضع المظلم
+        <FaMoon size={20} style={{ color: "#ffcc00" }} /> 
       ) : (
-        <FaSun size={20} style={{ color: "#ffcc00" }} /> // أيقونة الوضع الفاتح
+        <FaSun size={20} style={{ color: "#ffcc00" }} /> 
       )}
     </div>
   );
