@@ -61,7 +61,7 @@ export default function TvShows() {
             <div key={index} className="col-md-2">
               <Link
                 to={`/details/${show.id}?type=tv`} 
-                className="text-decoration-none text-dark"
+                className="text-decoration-none text-warning"
               >
                 <div className="item position-relative">
                   <img

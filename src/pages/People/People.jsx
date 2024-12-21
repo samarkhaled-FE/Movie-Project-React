@@ -63,7 +63,7 @@ export default function People() {
               <div className="item position-relative">
                 <Link
                   to={`/details/${person.id}?type=person`}
-                  className="text-decoration-none text-dark"
+                  className="text-decoration-none text-warning"
                 >
                   {person.profile_path ? (
                     <img

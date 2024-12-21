@@ -1,15 +1,15 @@
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons"; 
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import "./Home.module.css";
+import useAuthState from "../../Hooks/useAuthState";
 
 export default function Home() {
+  const isUserLogedIn = useAuthState();
   const [trendingItems, setTrendingItems] = useState([]);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getTrendingItems();
@@ -17,12 +17,12 @@ export default function Home() {
 
   const getTrendingItems = async () => {
     try {
-      setLoading(true); 
+      setLoading(true);
       let { data } = await axios.get(
         "https://api.themoviedb.org/3/trending/all/day?api_key=c636ed7787cc302d96bf88ccf334e0d8"
       );
       setTrendingItems(data.results);
-      setLoading(false); 
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching trending items:", error);
       setLoading(false);
@@ -54,16 +54,21 @@ export default function Home() {
           <FontAwesomeIcon
             icon={faSpinner}
             spin
-            size="3x" 
+            size="3x"
             className="text-warning"
           />
         </div>
       ) : (
-        
         trendingItems.map((item, index) => (
           <div key={index} className="col-md-2">
             <div className="item position-relative">
-              <Link to={`/details/${item.id}?type=${item.media_type}`}>
+              <Link
+                to={
+                  isUserLogedIn
+                    ? `/details/${item.id}?type=${item.media_type}`
+                    : "/login"
+                }
+              >
                 {item.poster_path ? (
                   <img
                     className="w-100 position-relative"
@@ -90,8 +95,12 @@ export default function Home() {
               </span>
               <h6 className="mt-2">
                 <Link
-                  to={`/details/${item.id}?type=${item.media_type}`}
-                  className="text-decoration-none text-dark"
+                  to={
+                    isUserLogedIn
+                      ? `/details/${item.id}?type=${item.media_type}`
+                      : "/login"
+                  }
+                  className="text-decoration-none text-warning"
                 >
                   {item.title || item.name || "No title available"}
                 </Link>
@@ -114,4 +123,3 @@ export default function Home() {
     </div>
   );
 }
-

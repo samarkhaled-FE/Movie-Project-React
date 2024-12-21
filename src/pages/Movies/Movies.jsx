@@ -142,7 +142,7 @@ export default function Movies() {
           <div key={index} className="col-md-2">
             <Link
               to={`/details/${movie.id}?type=${movie.media_type}`}
-              className="text-decoration-none text-dark"
+              className="text-decoration-none text-warning"
             >
               <div className="item position-relative">
                 {movie.poster_path ? (
