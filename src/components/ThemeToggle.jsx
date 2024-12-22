@@ -25,7 +25,7 @@ const ThemeToggle = () => {
       width: "50px",
       height: "50px",
       transition: "all 0.3s",
-      marginRight: "65px",  // مسافة فاصلة بين أيقونة الثيم وزر القائمة
+      marginRight: "65px",  
     }}
       onClick={handleToggle}
     >
