@@ -64,7 +64,7 @@ export default function Login() {
           />
           <Input
             formProperties={formProperties}
-            type="passowrd"
+            type="password"
             name="password"
             placeholder="password"
             required
