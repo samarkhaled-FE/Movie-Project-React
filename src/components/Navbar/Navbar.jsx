@@ -1,8 +1,7 @@
 
-
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaSpotify, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa"; // استيراد الأيقونات المطلوبة
 import { logOut } from "../../Auth/Auth";
 import useAuthState from "../../Hooks/useAuthState";
 import { IoPersonCircle } from "react-icons/io5";
@@ -72,40 +71,31 @@ export default function Navbar() {
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <div className="social-media d-flex align-items-center">
               <a
-                href="https://www.facebook.com"
+                href="https://github.com/samarkhaled-FE"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mx-2"
                 style={iconStyle}
               >
-                <FaFacebook />
+                <FaGithub />
               </a>
               <a
-                href="https://www.spotify.com"
+                href="https://www.linkedin.com/in/samar-khaled-abdradi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mx-2"
                 style={iconStyle}
               >
-                <FaSpotify />
+                <FaLinkedin />
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://wa.me/201032068211"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mx-2"
                 style={iconStyle}
               >
-                <FaInstagram />
-              </a>
-              <a
-                href="https://www.youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mx-2"
-                style={iconStyle}
-              >
-                <FaYoutube />
+                <FaWhatsapp />
               </a>
             </div>
             {!user ? (
@@ -140,3 +130,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+

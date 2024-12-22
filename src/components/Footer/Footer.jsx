@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useSelector } from "react-redux";
-import { FaFacebook, FaInstagram, FaTwitter, FaTiktok, FaFilm } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaWhatsapp, FaFilm } from "react-icons/fa";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
@@ -34,24 +34,22 @@ const Footer = () => {
               <li><a href="/movies" className="text-decoration-none" style={linkStyle}>Movies</a></li>
               <li><a href="/tvshows" className="text-decoration-none" style={linkStyle}>TV Shows</a></li>
               <li><a href="/people" className="text-decoration-none" style={linkStyle}>People</a></li>
-              <li><a href="/about" className="text-decoration-none" style={linkStyle}>About</a></li>
+              <li><a href="/NotFound" className="text-decoration-none" style={linkStyle}>NotFound</a></li>
             </ul>
           </div>
 
           <div className="col-md-6 d-flex justify-content-end align-items-center gap-4">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} style={iconStyle}>
-              <FaFacebook />
+            <a href="https://www.linkedin.com/in/samar-khaled-abdradi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} style={iconStyle}>
+              <FaLinkedin />
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} style={iconStyle}>
-              <FaInstagram />
+            <a href="https://github.com/samarkhaled-FE" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} style={iconStyle}>
+              <FaGithub />
             </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} style={iconStyle}>
-              <FaTwitter />
-            </a>
-            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} style={iconStyle}>
-              <FaTiktok />
+            <a href="https://wa.me/201032068211" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} style={iconStyle}>
+              <FaWhatsapp />
             </a>
           </div>
+          
         </div>
 
         <hr className="my-4" style={{ borderColor: theme === "light" ? "#000" : "#f3fb15" }} />

@@ -13,19 +13,20 @@ const ThemeToggle = () => {
 
   return (
     <div
-      style={{
-        backgroundColor: theme === "light" ? "#fff" : "#131722",
-        color: theme === "light" ? "#000" : "#fff",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "10px",
-        borderRadius: "50%",
-        cursor: "pointer",
-        width: "50px",
-        height: "50px",
-        transition: "all 0.3s",
-      }}
+    style={{
+      backgroundColor: theme === "light" ? "#fff" : "#131722",
+      color: theme === "light" ? "#000" : "#fff",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "10px",
+      borderRadius: "50%",
+      cursor: "pointer",
+      width: "50px",
+      height: "50px",
+      transition: "all 0.3s",
+      marginRight: "65px",  // مسافة فاصلة بين أيقونة الثيم وزر القائمة
+    }}
       onClick={handleToggle}
     >
       {theme === "light" ? (
@@ -38,3 +39,4 @@ const ThemeToggle = () => {
 };
 
 export default ThemeToggle;
+
