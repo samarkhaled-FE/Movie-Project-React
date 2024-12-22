@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa"; // استيراد الأيقونات المطلوبة
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa"; 
 import { logOut } from "../../Auth/Auth";
 import useAuthState from "../../Hooks/useAuthState";
 import { IoPersonCircle } from "react-icons/io5";
@@ -111,7 +110,7 @@ export default function Navbar() {
                   title={user}
                   style={{
                     fontSize: "17px",
-                    color: theme === "light" ? "#000" : "#fff", // تغيير لون الأيقونة بناءً على الثيم
+                    color: theme === "light" ? "#000" : "#fff", 
                   }}
                 />
               </li>
@@ -130,5 +129,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-
