@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+//dont forget yeah samar put this 3 cofe in file called env
 
 const SUPABASE_URL = "https://hjghbmjzdtyukejkpsjy.supabase.co";
 const SUPABASE_ANON_KEY =
